@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F00139</color>
+    <color name="colorPrimaryLight">#F8E8ED</color>
+    <color name="colorPrimaryDark">#B40028</color>
+    <color name="colorAccent">#01AEF0</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRed">#ff1744</color>
+    <color name="colorRedDark">#cc1236</color>
+    <color name="colorPurple">#9c27b0</color>
+    <color name="colorPurpleDark">#7d1f8d</color>
+    <color name="colorGreen">#0f9d58</color>
+    <color name="colorGreenDark">#0c7e46</color>
+    <color name="lightgray">#F9F9F9</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="yello">#ffb300</color>
+    <color name="green">#00bfa5</color>
+    <color name="pink">#fe104d</color>
+    <color name="light_purple">#D500F9</color>
+    <color name="gray">#E2E1E1</color>
+
+    <color name="ic_ticket_background">#D500F9</color>
+    <color name="ic_tickets_background">#D500F9</color>
+    <color name="ic_ticketsa_background">#D500F9</color>
+    <color name="ic_ticketss_background">#D500F9</color>
+
+</resources>

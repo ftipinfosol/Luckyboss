@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".newTicketActivity"
+    tools:showIn="@layout/new_ticket_activity">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:orientation="vertical"
+                android:focusable="true" android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:focusable="true" android:focusableInTouchMode="true">
+
+                    <Button
+                        android:id="@+id/btn_view_new_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/fab_margin2"
+                        android:textSize="15sp"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/view"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_add_new_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/fab_margin2"
+                        android:textSize="15sp"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/newticket"
+                        />
+                    <Button
+                        android:id="@+id/btn_print_new_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/fab_margin2"
+                        android:textSize="15sp"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/print"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/time"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin">
+                    <RadioGroup
+                        android:id="@+id/radioGroupTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/radioTwelve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_button_background"
+                            android:checked="true"
+                            android:text="@string/twelve"
+                            android:button="@android:color/transparent"
+                            android:textAlignment="center"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/radioThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_button_background"
+                            android:text="@string/three"
+                            android:button="@android:color/transparent"
+                            android:textAlignment="center"/>
+
+                        <RadioButton
+                            android:id="@+id/radioSeven"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_button_background"
+                            android:text="@string/seven"
+                            android:button="@android:color/transparent"
+                            android:textAlignment="center"/>
+                    </RadioGroup>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ticket"
+                    android:layout_marginTop="@dimen/fab_margin"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin">
+                <RadioGroup
+                    android:id="@+id/radioGroupTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioBoard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_background"
+                        android:checked="true"
+                        android:text="@string/board"
+                        android:button="@android:color/transparent"
+                        android:textAlignment="center"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioPair"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_background"
+                        android:text="@string/pair"
+                        android:button="@android:color/transparent"
+                        android:textAlignment="center"/>
+
+                    <RadioButton
+                        android:id="@+id/radio3D"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_background"
+                        android:text="@string/threeD"
+                        android:button="@android:color/transparent"
+                        android:textAlignment="center"/>
+                    <RadioButton
+                        android:id="@+id/radio4D"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_background"
+                        android:text="@string/fourD"
+                        android:button="@android:color/transparent"
+                        android:textAlignment="center"/>
+                    <RadioButton
+                        android:id="@+id/radioBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_button_background"
+                        android:text="@string/box"
+                        android:button="@android:color/transparent"
+                        android:textAlignment="center"/>
+                </RadioGroup>
+                </HorizontalScrollView>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin">
+                <RadioGroup
+                    android:id="@+id/radioGroupBoardSerial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    >
+
+                </RadioGroup>
+                </HorizontalScrollView>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"                    >
+                    <RadioGroup
+                        android:id="@+id/radioGroupPairSerial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        >
+                    </RadioGroup>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rate"
+                    android:layout_marginTop="@dimen/fab_margin"/>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin">
+                    <RadioGroup
+                        android:id="@+id/radioGroupRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        >
+                    </RadioGroup>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:focusableInTouchMode="true">
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:focusable="true" android:focusableInTouchMode="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_number"
+                            />
+                        <EditText
+                            android:id="@+id/input_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            >
+                        </EditText>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:focusable="true" android:focusableInTouchMode="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quantity"
+                            />
+                        <EditText
+                            android:id="@+id/input_quantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:inputType="number"
+                            android:imeOptions="actionGo">
+                        </EditText>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:focusableInTouchMode="true">
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:focusable="true" android:focusableInTouchMode="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rate"
+                            />
+                        <EditText
+                            android:id="@+id/input_rate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+
+                            >
+                        </EditText>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:focusable="true" android:focusableInTouchMode="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            />
+                        <EditText
+                            android:id="@+id/input_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+
+                            >
+                        </EditText>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/btn_create_new_ticket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:textSize="15sp"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorWhite"
+                android:text="@string/create"
+                 />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

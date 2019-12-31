@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".homeActivity"
+    tools:showIn="@layout/home_activity"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.CardView
+            app:cardUseCompatPadding="true"
+            android:id="@+id/tvUser"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            >
+            <TextView
+                android:id="@+id/welcome"
+                android:padding="15dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:gravity="center"/>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                app:cardUseCompatPadding="true"
+                android:onClick="new_ticket"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:id="@+id/bankcardId"
+                android:layout_width="160dp"
+                android:layout_height="132dp"
+                android:layout_margin="7dp"
+                android:focusable="true"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cb_blue"
+                        android:src="@drawable/logo1"
+                        android:padding="10dp"
+                        tools:ignore="ContentDescription" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/new_tickets"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                app:cardUseCompatPadding="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="view_tickets"
+                android:clickable="true"
+                android:layout_width="160dp"
+                android:layout_height="132dp"
+                android:layout_margin="7dp"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cb_blue"
+                        android:src="@drawable/tickets_history"
+                        android:padding="10dp"
+                        tools:ignore="ContentDescription" />
+                    <TextView
+                        android:id="@+id/collected_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ticket_history"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                app:cardUseCompatPadding="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="view_result_history"
+                android:clickable="true"
+                android:layout_width="160dp"
+                android:layout_height="132dp"
+                android:layout_margin="7dp"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cb_blue"
+                        android:src="@drawable/result_history"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/result_history"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                app:cardUseCompatPadding="true"
+                android:onClick="logout"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="160dp"
+                android:layout_height="132dp"
+                android:layout_margin="7dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cb_blue"
+                        android:padding="10dp"
+                        android:src="@drawable/logout"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/logout"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+
+<!--        <LinearLayout-->
+<!--            android:clipToPadding="false"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <android.support.v7.widget.CardView-->
+<!--                app:cardUseCompatPadding="true"-->
+<!--                android:onClick="logout"-->
+<!--                android:foreground="?android:attr/selectableItemBackground"-->
+<!--                android:clickable="true"-->
+<!--                android:layout_width="335dp"-->
+<!--                android:layout_height="62dp"-->
+<!--                android:layout_margin="7dp"-->
+<!--                android:focusable="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:background="@drawable/cb_blue"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/ic_tickets"-->
+<!--                        tools:ignore="ContentDescription" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:text="@string/logout"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                </LinearLayout>-->
+<!--            </android.support.v7.widget.CardView>-->
+
+<!--        </LinearLayout>-->
+    </LinearLayout>
+
+</ScrollView>
