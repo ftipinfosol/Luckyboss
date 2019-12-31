@@ -55,6 +55,7 @@ public class ticketsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         odb = new db();
+        //add new line test gitHub
 
         if (Utli.isNetworkConnected(getApplicationContext())) {
 
@@ -68,6 +69,8 @@ public class ticketsActivity extends AppCompatActivity {
 
                         if(response.getString("sign_in").equals("Yes") ) {
                             //Utli.message(getApplicationContext(), "Accepted");
+                            Log.e("test","cool");
+
                         }
                         else {
                             Utli.message(getApplicationContext(), "Re-login requested from Admin");
