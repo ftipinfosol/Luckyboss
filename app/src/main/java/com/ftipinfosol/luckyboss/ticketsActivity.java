@@ -68,7 +68,7 @@ public class ticketsActivity extends AppCompatActivity {
                         Log.d("getratesigninvalue", response.getString("sign_in"));
 
                         if(response.getString("sign_in").equals("Yes") ) {
-                            //Utli.message(getApplicationContext(), "Accepted");
+                            //Utli.message(getApplicationContext(), "Accepted");;
                             Log.e("test","cool");
 
                         }
