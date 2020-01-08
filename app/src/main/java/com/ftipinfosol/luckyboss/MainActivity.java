@@ -74,21 +74,50 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("firststart", AUTH_USER.toString());
 
                     AUTH_TOKEN = "Bearer "+AUTH_USER.getString("token");
+                    //Check sign in granted or not
+                    odb.getSignDetail(new HttpCallBack() {
+                        @Override
+                        public void onJSONResponse(boolean success, JSONObject response) {
+                            try {
 
-//                    if(odb.get_sign_in_detail()) {
-//                        Utli.message(getApplicationContext(), "No Re-login raised from Admin");
-//
-//                        startActivity(new Intent(getApplicationContext(),homeActivity.class));
-//                        finish();
-//                    }
-//                    else {
-//                        Utli.message(getApplicationContext(), "Re-login requested from Admin");
-//                        startActivity(new Intent(getApplicationContext(),loginActivity.class));
-//                        finish();
-//                    }
-                    startActivity(new Intent(getApplicationContext(),homeActivity.class));
-                    finish();
-                } catch (JSONException e) {
+                                //Log.d("getSignDetailtry", response.getString("sign_in"));
+                                Log.d("getSignDetailtry", response.toString());
+
+                                if(response.has("message") ) {
+
+                                    if (response.getString("message").equals("Unauthenticated.")) {
+                                        Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                                        startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                                        finish();
+                                    }
+                                }
+                                if(response.has("sign_in") ) {
+                                    if (response.getString("sign_in").equals("Yes")) {
+                                        //Utli.message(getApplicationContext(), "Accepted");
+                                        //Log.e("getSignDetail", "Accepted");
+
+
+                                        startActivity(new Intent(getApplicationContext(), homeActivity.class));
+                                        finish();
+
+                                    } else {
+                                        Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                                        startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                                        finish();
+                                    }
+                                }
+                            } catch (Exception e) {
+                                Log.e("getSignDetailcatch", e.getMessage());
+                            }
+                        }
+
+                        @Override
+                        public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
+                            Log.d("getSignDetailempty", response.toString());
+                        }
+                    });
+
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -98,9 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
 
-
-//            startActivity(new Intent(getApplicationContext(), loginActivity.class));
-//            finish();
         }
         catch (Exception ex){
             Log.e("start:",ex.getMessage());

@@ -129,16 +129,27 @@ public class newTicketActivity extends AppCompatActivity {
             public void onJSONResponse(boolean success, JSONObject response) {
                 try {
 
-                    Log.d("getSignDetailtry", response.getString("sign_in"));
+                    //Log.d("getSignDetailtry", response.getString("sign_in"));
+                    Log.d("getSignDetailtry", response.toString());
 
-                    if(response.getString("sign_in").equals("Yes") ) {
-                        //Utli.message(getApplicationContext(), "Accepted");
-                        Log.e("getSignDetail", "Accepted");
+                    if(response.has("message") ) {
+
+                        if (response.getString("message").equals("Unauthenticated.")) {
+                            Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                            startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                            finish();
+                        }
                     }
-                    else {
-                        Utli.message(getApplicationContext(), "Re-login requested from Admin");
-                        startActivity(new Intent(getApplicationContext(),loginActivity.class));
-                        finish();
+                    if(response.has("sign_in") ) {
+
+                        if (response.getString("sign_in").equals("Yes")) {
+                            //Utli.message(getApplicationContext(), "Accepted");
+                            Log.e("getSignDetail", "Accepted");
+                        } else {
+                            Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                            startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                            finish();
+                        }
                     }
                 } catch (Exception e) {
                     Log.e("getSignDetailcatch", e.getMessage());
@@ -674,68 +685,81 @@ public class newTicketActivity extends AppCompatActivity {
                 public void onJSONResponse(boolean success, JSONObject response) {
                     try {
 
-                        Log.d("getratesigninvalue", response.getString("sign_in"));
+                        //Log.d("getratesigninvalue", response.getString("sign_in"));
 
-                        if (response.getString("sign_in").equals("Yes")) {
-                            //Valid time restriction 12, 3, 7
-                            odb.getTimeRestriction(strTimeType, new HttpCallBack() {
-                                @Override
-                                public void onJSONResponse(boolean success, JSONObject response) {
-                                    try {
+                        Log.d("getSignDetailtry", response.toString());
 
-                                        Log.d("gettime", response.getString("returnvalue"));
+                        if(response.has("message") ) {
 
-                                        if (response.getString("returnvalue").equals("success")) {
-                                            //Create new ticket
-                                            odb.createNewTicket(MainActivity.AUTH_TOKEN, parameters, new HttpCallBack() {
-                                                @Override
-                                                public void onJSONResponse(boolean success, JSONObject response) {
-                                                    Utli.message(getApplicationContext(), "Ticket Created Successfully!!");
-                                                    etNumber.setText("");
-                                                    etQuantity.setText("");
-                                                    etRate.setText("");
-                                                    etTotal.setText("");
-                                                    etNumber.requestFocus();
+                            if (response.getString("message").equals("Unauthenticated.")) {
+                                Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                                startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                                finish();
+                            }
+                        }
 
-                                                    ticket_count = ticket_count +1;
+                        if(response.has("sign_in") ) {
+                            if (response.getString("sign_in").equals("Yes")) {
+                                //Valid time restriction 12, 3, 7
+                                odb.getTimeRestriction(strTimeType, new HttpCallBack() {
+                                    @Override
+                                    public void onJSONResponse(boolean success, JSONObject response) {
+                                        try {
+
+                                            Log.d("gettime", response.getString("returnvalue"));
+
+                                            if (response.getString("returnvalue").equals("success")) {
+                                                //Create new ticket
+                                                odb.createNewTicket(MainActivity.AUTH_TOKEN, parameters, new HttpCallBack() {
+                                                    @Override
+                                                    public void onJSONResponse(boolean success, JSONObject response) {
+                                                        Utli.message(getApplicationContext(), "Ticket Created Successfully!!");
+                                                        etNumber.setText("");
+                                                        etQuantity.setText("");
+                                                        etRate.setText("");
+                                                        etTotal.setText("");
+                                                        etNumber.requestFocus();
+
+                                                        ticket_count = ticket_count + 1;
 //                                                    if(ticket_count == 1)
 //                                                        tickets_ID = generateID();
 
-                                                    String printText = "Print("+ticket_count+")";
-                                                    btnPrintTicket.setText(printText);
-                                                }
+                                                        String printText = "Print(" + ticket_count + ")";
+                                                        btnPrintTicket.setText(printText);
+                                                    }
 
-                                                @Override
-                                                public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
-                                                    Utli.message(getApplicationContext(), "Something went wrong..");
-                                                }
-                                            });
+                                                    @Override
+                                                    public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
+                                                        Utli.message(getApplicationContext(), "Something went wrong..");
+                                                    }
+                                                });
 
-                                        } else {
-                                            if (strTimeType.equals("12"))
-                                                Utli.message(getApplicationContext(), "Entry time is 6am to 11.55pm for 12pm slot");
-                                            if (strTimeType.equals("3"))
-                                                Utli.message(getApplicationContext(), "Entry time is 6am to 2.58pm for 3pm slot");
-                                            if (strTimeType.equals("7"))
-                                                Utli.message(getApplicationContext(), "Entry time is 6am to 6.55pm for 7pm slot");
+                                            } else {
+                                                if (strTimeType.equals("12"))
+                                                    Utli.message(getApplicationContext(), "Entry time is 6am to 11.55pm for 12pm slot");
+                                                if (strTimeType.equals("3"))
+                                                    Utli.message(getApplicationContext(), "Entry time is 6am to 2.58pm for 3pm slot");
+                                                if (strTimeType.equals("7"))
+                                                    Utli.message(getApplicationContext(), "Entry time is 6am to 6.55pm for 7pm slot");
 
-                                            boolTimeRestriction = false;
+                                                boolTimeRestriction = false;
 
+                                            }
+                                        } catch (Exception e) {
+                                            Log.e("gettime", e.getMessage());
                                         }
-                                    } catch (Exception e) {
-                                        Log.e("gettime", e.getMessage());
                                     }
-                                }
 
-                                @Override
-                                public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
-                                    Log.d("gettime", response.toString());
-                                }
-                            });
-                        } else {
-                            Utli.message(getApplicationContext(), "Re-login requested from Admin");
-                            startActivity(new Intent(getApplicationContext(), loginActivity.class));
-                            finish();
+                                    @Override
+                                    public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
+                                        Log.d("gettime", response.toString());
+                                    }
+                                });
+                            } else {
+                                Utli.message(getApplicationContext(), "Re-login requested from Admin");
+                                startActivity(new Intent(getApplicationContext(), loginActivity.class));
+                                finish();
+                            }
                         }
                     } catch (Exception e) {
                         Log.e("getSignDetailcatch", e.getMessage());

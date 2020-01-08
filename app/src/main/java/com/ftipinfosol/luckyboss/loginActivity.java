@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -58,6 +59,14 @@ public class loginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+        findViewById(R.id.appBarLayout).bringToFront();
+
+        //getActionBar().setElevation(0);
+
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        toolbar.setTitle("LUCKY BOSS");
+//        setSupportActionBar(toolbar);
 
         sp = getSharedPreferences("API", Context.MODE_PRIVATE);
 
