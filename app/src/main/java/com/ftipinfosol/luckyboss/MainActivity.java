@@ -126,13 +126,13 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
-                    Log.e("getrate", e.getMessage());
+                    Log.e("inloguttry", e.getMessage());
                 }
             }
 
             @Override
             public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
-                Log.d("getrate", response.toString());
+                Log.d("inlogutempty", response.toString());
             }
         });
 

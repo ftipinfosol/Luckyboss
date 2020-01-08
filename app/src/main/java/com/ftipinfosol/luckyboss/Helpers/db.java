@@ -79,14 +79,14 @@ public class db {
         client.addHeader("Authorization", MainActivity.AUTH_TOKEN);
         client.addHeader("Accept", "application/json");
 
-        Log.e("getsignrate", MainActivity.AUTH_TOKEN);
+        Log.e("getTicketsByTransID", MainActivity.AUTH_TOKEN);
 
         client.post(apiURL.GET_TICKETS_BY_TRANSID, params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray jsonArray) {
-                Log.e("getrate","onsucess");
-                Log.e("getrate",jsonArray.toString());
+                Log.e("getTicketsByTransID","onsucess");
+                Log.e("getTicketsByTransID",jsonArray.toString());
 
 
                 callBackJsonArray.onJSONResponse(true, jsonArray);
@@ -95,8 +95,8 @@ public class db {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject response) {
                 e.printStackTrace();
-                Log.e("getrate","onfailure");
-                Log.e("getrate",e.getMessage());
+                Log.e("getTicketsByTransID","onfailure");
+                Log.e("getTicketsByTransID",e.getMessage());
 
             }
 
@@ -113,14 +113,14 @@ public class db {
         client.addHeader("Authorization", MainActivity.AUTH_TOKEN);
         client.addHeader("Accept", "application/json");
 
-        Log.e("getsignrate", MainActivity.AUTH_TOKEN);
+        Log.e("getTicketsByBillNo", MainActivity.AUTH_TOKEN);
 
         client.post(apiURL.GET_TICKETS_BY_BILLNO, params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray jsonArray) {
-                Log.e("getrate","onsucess");
-                Log.e("getrate",jsonArray.toString());
+                Log.e("getTicketsByBillNo","onsucess");
+                Log.e("getTicketsByBillNo",jsonArray.toString());
 
 
                 callBackJsonArray.onJSONResponse(true, jsonArray);
@@ -129,8 +129,8 @@ public class db {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject response) {
                 e.printStackTrace();
-                Log.e("getrate","onfailure");
-                Log.e("getrate",e.getMessage());
+                Log.e("getTicketsByBillNo","onfailure");
+                Log.e("getTicketsByBillNo",e.getMessage());
 
             }
 
@@ -182,15 +182,15 @@ public class db {
         client.addHeader("Authorization", MainActivity.AUTH_TOKEN);
         client.addHeader("Accept", "application/json");
 
-        Log.e("getrate", MainActivity.AUTH_TOKEN);
+        Log.e("getSignDetaildb", MainActivity.AUTH_TOKEN);
 
 
         client.post(apiURL.GET_SIGN_IN_DETAIL, params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Log.e("getrate","onsucess");
-                Log.e("getrate",response.toString());
+                Log.e("getSignDetaildbsuccess","onsucess");
+                Log.e("getSignDetaildbsuccess",response.toString());
 
 
                 callback.onJSONResponse(true, response);
@@ -199,8 +199,9 @@ public class db {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject response) {
 
-                Log.e("getrate","onfailure");
-                Log.e("getrate",e.getMessage());
+                Log.e("getSignDetaildbfailure","onfailure");
+                Log.e("getSignDetaildbfailure",e.getMessage());
+                Log.e("getSignDetaildbfailure",response.toString());
 
             }
 
@@ -217,15 +218,15 @@ public class db {
         client.addHeader("Authorization", MainActivity.AUTH_TOKEN);
         client.addHeader("Accept", "application/json");
 
-        Log.e("getrate", MainActivity.AUTH_TOKEN);
+        Log.e("updateSignDetailindb", MainActivity.AUTH_TOKEN);
 
 
         client.post(apiURL.UPDATE_SIGN_IN_DETAIL, params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Log.e("getrate","onsucess");
-                Log.e("getrate",response.toString());
+                Log.e("updateSignDetail","onsucess");
+                Log.e("updateSignDetail",response.toString());
 
 
                 callback.onJSONResponse(true, response);
@@ -234,8 +235,8 @@ public class db {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject response) {
 
-                Log.e("getrate","onfailure");
-                Log.e("getrate",e.getMessage());
+                Log.e("updateSignDetail","onfailure");
+                Log.e("updateSignDetail",e.getMessage());
 
             }
 

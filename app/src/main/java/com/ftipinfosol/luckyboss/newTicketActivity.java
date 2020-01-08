@@ -129,10 +129,11 @@ public class newTicketActivity extends AppCompatActivity {
             public void onJSONResponse(boolean success, JSONObject response) {
                 try {
 
-                    Log.d("getratesigninvalue", response.getString("sign_in"));
+                    Log.d("getSignDetailtry", response.getString("sign_in"));
 
                     if(response.getString("sign_in").equals("Yes") ) {
                         //Utli.message(getApplicationContext(), "Accepted");
+                        Log.e("getSignDetail", "Accepted");
                     }
                     else {
                         Utli.message(getApplicationContext(), "Re-login requested from Admin");
@@ -140,13 +141,13 @@ public class newTicketActivity extends AppCompatActivity {
                         finish();
                     }
                 } catch (Exception e) {
-                    Log.e("getrate", e.getMessage());
+                    Log.e("getSignDetailcatch", e.getMessage());
                 }
             }
 
             @Override
             public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
-                Log.d("getrate", response.toString());
+                Log.d("getSignDetailempty", response.toString());
             }
         });
 
@@ -737,13 +738,13 @@ public class newTicketActivity extends AppCompatActivity {
                             finish();
                         }
                     } catch (Exception e) {
-                        Log.e("getrate", e.getMessage());
+                        Log.e("getSignDetailcatch", e.getMessage());
                     }
                 }
 
                 @Override
                 public void onEmptyResponse(boolean success, int statusCode, JSONObject response) {
-                    Log.d("getrate", response.toString());
+                    Log.d("getSignDetailempty", response.toString());
                 }
             });
 
