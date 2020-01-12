@@ -31,7 +31,7 @@
     <string name="pair">Pair</string>
     <string name="threeD">3D</string>
     <string name="fourD">4D</string>
-    <string name="box">Box</string>
+
     <string name="rate">Rate</string>
     <string name="ticket_number">Number</string>
     <string name="quantity">Quantity</string>
@@ -44,5 +44,19 @@
     <string name="prize">Prize</string>
     <string name="balance">Balance</string>
     <string name="excess">Excess</string>
+
+    <string-array name="timeslot">
+        <item>12</item>
+        <item>3</item>
+        <item>7</item>
+    </string-array>
+    <string name="abc">ABC</string>
+    <string name="box">Box</string>
+    <string name="abbcca">AB BC AC</string>
+    <string name="threed30">3D 30</string>
+    <string name="threed70">3D 70</string>
+    <string name="threed120">3D 120</string>
+    <string name="fourd20">4D 20</string>
+    <string name="fourd100">4D 100</string>
 
 </resources>

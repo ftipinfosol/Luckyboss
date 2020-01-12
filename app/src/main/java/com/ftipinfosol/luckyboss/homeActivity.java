@@ -46,6 +46,13 @@ public class homeActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("homescreen", e.getMessage());
         }
+
+        try{
+            startActivity(new Intent(getApplicationContext(), chatTypeNewTicketActivity.class));
+        }
+        catch (Exception e){
+            Log.e("newticket",e.getMessage());
+        }
     }
 
     public void logout(View view) {
@@ -92,7 +99,7 @@ public class homeActivity extends AppCompatActivity {
     public void new_ticket(View view) {
         try {
 
-            startActivity(new Intent(getApplicationContext(), newTicketActivity.class));
+            startActivity(new Intent(getApplicationContext(), chatTypeNewTicketActivity.class));
         }
         catch (Exception e){
             Log.e("newticket",e.getMessage());

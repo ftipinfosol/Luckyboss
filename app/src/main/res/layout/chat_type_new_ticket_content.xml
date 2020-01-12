@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".chatTypeNewTicketActivity"
+    tools:showIn="@layout/chat_type_new_ticket"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fab_margin2"
+        android:layout_marginLeft="@dimen/fab_margin2">
+        <RadioGroup
+            android:id="@+id/radioGroupTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+            >
+
+            <RadioButton
+                android:id="@+id/radioABC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/abc"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radioABBCAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/abbcca"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radioBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/box"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radio3D30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/threed30"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radio3D70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/threed70"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radio3D120"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/threed120"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radio4D20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/fourd20"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/radio4D100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_background"
+                android:text="@string/fourd100"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"/>
+
+        </RadioGroup>
+    </HorizontalScrollView>
+
+
+
+
+</android.widget.LinearLayout>
